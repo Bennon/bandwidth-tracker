@@ -3,4 +3,9 @@ Reversing a string
 """
 
 string = raw_input("Enter your string here: ")
-print "Your reversed string is: ", string
+characters = [c for c in string]
+
+for i in range(len(characters) / 2):
+    characters[i], characters[len(characters) - i - 1] = characters[len(characters) - i - 1], characters[i]
+
+print "Your reversed string is: ", (''.join(characters))
