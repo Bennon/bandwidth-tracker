@@ -4,14 +4,17 @@ Probably need to store each word in an array and modify
 in a similar manner to the single-word python script
 """
 
+# https://www.youtube.com/watch?v=Hv6RbEOlqRo
 vowels = 'aeiou'
 pig = 'ay'
 count = 0
 pigPhrase = []
 solution = ""
 
+# Save user input
 phrase = raw_input("Please enter a phrase: ").lower()
 
+# Split user input string into an array
 word_list = phrase.split()
 
 for word in word_list:
