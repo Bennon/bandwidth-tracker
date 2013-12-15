@@ -13,7 +13,6 @@ solution = ""
 phrase = raw_input("Please enter a phrase: ").lower()
 
 word_list = phrase.split()
-print word_list
 
 for word in word_list:
 
