@@ -4,34 +4,29 @@ Probably need to store each word in an array and modify
 in a similar manner to the single-word python script
 """
 
-# List vowels
 vowels = 'aeiou'
-# Pig latin
 pig = 'ay'
-# Array to store words
-word_list = []
-# Counter
 count = 0
-# Letter storage
-letters = []
-# Word storage
-word = ""
+pigPhrase = []
+solution = ""
 
-# Get user input and convert to lower case
 phrase = raw_input("Please enter a phrase: ").lower()
 
-
-for i in phrase:
-	if i == " ":
-		count = count + 1
-		for char in letters:
-			word += char
-		word_list.append(word)
-		letters = []
-		word = ""
-		print i,  count
-	else:
-		letters.append(i)
-		print i,  count
+word_list = phrase.split()
 print word_list
 
+for word in word_list:
+
+	if word[0] in vowels:
+		pigLatin = word + pig
+		pigPhrase.append(pigLatin)
+		count = count + 1
+	else:	
+		pigLatin = word[1:] + '-' + word[0] + pig
+		pigPhrase.append(pigLatin)
+		count = count + 1
+
+for i in pigPhrase:
+	solution += i + " "
+
+print solution
