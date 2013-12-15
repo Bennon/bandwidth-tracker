@@ -9,11 +9,14 @@ vowels = 'aeiou'
 # Pig latin
 pig = 'ay'
 # Array to store words
-word_list = ""
+word_list = []
 # Counter
 count = 0
 # Letter storage
 letters = []
+# Word storage
+word = ""
+
 # Get user input and convert to lower case
 phrase = raw_input("Please enter a phrase: ").lower()
 
@@ -22,8 +25,10 @@ for i in phrase:
 	if i == " ":
 		count = count + 1
 		for char in letters:
-			word_list += char
-			letters = []
+			word += char
+		word_list.append(word)
+		letters = []
+		word = ""
 		print i,  count
 	else:
 		letters.append(i)
